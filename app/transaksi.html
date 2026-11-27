@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transaksi — AnggaranKeluarga</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Anggaran<span>Keluarga</span></h1>
+      <span class="sub" id="family-name">Keluarga Santoso</span>
+      <span class="sub" id="month-label">November 2026</span>
+    </div>
+    <nav>
+      <a href="index.html" data-page="dashboard">Dashboard</a>
+      <a href="transaksi.html" data-page="transactions">Transaksi</a>
+      <a href="anggaran.html" data-page="budgets">Anggaran</a>
+      <a href="tujuan.html" data-page="goals">Tujuan Tabungan</a>
+      <a href="laporan.html" data-page="reports">Laporan</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <h2>Transaksi</h2>
+    <p class="lede">Semua pemasukan dan pengeluaran bulan ini. Cari, saring, tambah, ubah, atau hapus — total di Dashboard ikut berubah.</p>
+    <section class="card" style="margin-bottom:16px">
+      <h3>Tambah Transaksi</h3>
+      <form id="add-form">
+        <div class="form-grid">
+          <div><label for="f-date">Tanggal</label><input id="f-date" type="date" value="2026-11-27" required></div>
+          <div><label for="f-desc">Keterangan</label><input id="f-desc" type="text" placeholder="cth. Belanja Pasar" required></div>
+          <div><label for="f-amount">Jumlah (Rp)</label><input id="f-amount" type="number" min="1" step="1000" placeholder="100000" required></div>
+          <div><label for="f-type">Jenis</label>
+            <select id="f-type"><option value="expense">Pengeluaran</option><option value="income">Pemasukan</option></select>
+          </div>
+          <div><label for="f-category">Kategori</label><select id="f-category"></select></div>
+          <div><button class="btn" type="submit" id="submit-btn">Tambah Transaksi</button></div>
+        </div>
+        <p class="small muted" id="edit-note" hidden>Sedang mengubah transaksi — <button type="button" class="btn ghost small" id="cancel-edit">Batalkan</button></p>
+      </form>
+    </section>
+    <section class="card">
+      <div class="toolbar">
+        <input class="grow" id="search" type="search" placeholder="Cari keterangan…">
+        <select id="filter-category"><option value="">Semua kategori</option></select>
+        <select id="filter-type">
+          <option value="">Semua jenis</option>
+          <option value="expense">Pengeluaran</option>
+          <option value="income">Pemasukan</option>
+        </select>
+      </div>
+      <div id="table-wrap"></div>
+      <p class="small muted" id="table-count"></p>
+    </section>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <span>AnggaranKeluarga — anggaran rumah tangga, data tersimpan di perangkat ini.</span>
+    <span><button class="btn ghost small" id="reset-data" type="button">Reset data contoh</button></span>
+  </div>
+</footer>
+<script src="data.js"></script>
+<script src="format.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+<script src="transactions.js"></script>
+</body>
+</html>
