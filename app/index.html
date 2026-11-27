@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — AnggaranKeluarga</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Anggaran<span>Keluarga</span></h1>
+      <span class="sub" id="family-name">Keluarga Santoso</span>
+      <span class="sub" id="month-label">November 2026</span>
+    </div>
+    <nav>
+      <a href="index.html" data-page="dashboard">Dashboard</a>
+      <a href="transaksi.html" data-page="transactions">Transaksi</a>
+      <a href="anggaran.html" data-page="budgets">Anggaran</a>
+      <a href="tujuan.html" data-page="goals">Tujuan Tabungan</a>
+      <a href="laporan.html" data-page="reports">Laporan</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <h2>Dashboard</h2>
+    <p class="lede">Ringkasan keuangan keluarga bulan ini — pemasukan, pengeluaran, dan sisa uang yang bisa ditabung.</p>
+    <div class="grid cards" id="summary-cards"></div>
+    <div class="grid two" style="margin-top:16px">
+      <section class="card">
+        <h3>Pengeluaran per Kategori</h3>
+        <div id="category-bars"></div>
+      </section>
+      <section class="card">
+        <h3>Kesehatan Anggaran</h3>
+        <div id="budget-health"></div>
+        <p class="small muted" style="margin-top:12px"><a href="anggaran.html">Lihat semua anggaran &rarr;</a></p>
+      </section>
+    </div>
+    <section class="card" style="margin-top:16px">
+      <h3>Transaksi Terakhir</h3>
+      <div id="recent-list"></div>
+      <p class="small muted" style="margin-top:12px"><a href="transaksi.html">Lihat semua transaksi &rarr;</a></p>
+    </section>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <span>AnggaranKeluarga — anggaran rumah tangga, data tersimpan di perangkat ini.</span>
+    <span><button class="btn ghost small" id="reset-data" type="button">Reset data contoh</button></span>
+  </div>
+</footer>
+<script src="data.js"></script>
+<script src="format.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
