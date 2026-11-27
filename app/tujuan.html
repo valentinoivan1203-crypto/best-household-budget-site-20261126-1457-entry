@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tujuan Tabungan — AnggaranKeluarga</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Anggaran<span>Keluarga</span></h1>
+      <span class="sub" id="family-name">Keluarga Santoso</span>
+      <span class="sub" id="month-label">November 2026</span>
+    </div>
+    <nav>
+      <a href="index.html" data-page="dashboard">Dashboard</a>
+      <a href="transaksi.html" data-page="transactions">Transaksi</a>
+      <a href="anggaran.html" data-page="budgets">Anggaran</a>
+      <a href="tujuan.html" data-page="goals">Tujuan Tabungan</a>
+      <a href="laporan.html" data-page="reports">Laporan</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <h2>Tujuan Tabungan</h2>
+    <p class="lede">Apa yang sedang ditabung keluarga — dana darurat, liburan, sampai DP rumah. Tambahkan dana setiap kali ada sisa uang.</p>
+    <div class="grid two" id="goal-list"></div>
+    <section class="card" style="margin-top:16px">
+      <h3>Buat Tujuan Baru</h3>
+      <form id="goal-form">
+        <div class="form-grid">
+          <div><label for="g-name">Nama tujuan</label><input id="g-name" type="text" placeholder="cth. Umroh" required></div>
+          <div><label for="g-target">Target (Rp)</label><input id="g-target" type="number" min="1" step="100000" placeholder="10000000" required></div>
+          <div><label for="g-note">Catatan</label><input id="g-note" type="text" placeholder="cth. Berangkat 2027"></div>
+          <div><button class="btn" type="submit">Tambah Tujuan</button></div>
+        </div>
+      </form>
+    </section>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <span>AnggaranKeluarga — anggaran rumah tangga, data tersimpan di perangkat ini.</span>
+    <span><button class="btn ghost small" id="reset-data" type="button">Reset data contoh</button></span>
+  </div>
+</footer>
+<script src="data.js"></script>
+<script src="format.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+<script src="goals.js"></script>
+</body>
+</html>
